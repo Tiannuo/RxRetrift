@@ -1,4 +1,4 @@
-package com.tikou.library_service;
+package com.tikou.library_service.retrofit;
 
 /**
  * Created by Tikou on 2016/10/17.
@@ -9,7 +9,7 @@ package com.tikou.library_service;
  */
 
 public class ApiUrl{
-    public static String Token="";
+    public static String Token="12354546545445";
     public static String BaseUrl="http://www.9niuw.com.cn:8080/jiuniu/client/";
 
 }
