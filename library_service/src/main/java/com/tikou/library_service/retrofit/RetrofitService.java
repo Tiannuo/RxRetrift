@@ -48,4 +48,9 @@ public class RetrofitService {
         @POST("index")
         Observable<Index> postIndex(@Query("type") String type,@Query("key") String key);
     }
+
+    public interface getIndexService{
+        @GET("index")
+        Observable<Index> getIndex(@Query("type") String type,@Query("key") String key);
+    }
 }

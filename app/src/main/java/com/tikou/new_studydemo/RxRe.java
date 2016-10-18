@@ -45,7 +45,7 @@ public class RxRe extends AppCompatActivity{
     }
 
     private void rxreee() {
-        ServiceHelper.toSubscribe(ServiceHelper.createNoHeadService(RetrofitService.postIndexService.class).postIndex("top", "9e05423f7ac6acf6d0dce3425c4ea9fe"),
+        ServiceHelper.toSubscribe(ServiceHelper.createNoHeadService(RetrofitService.getIndexService.class).getIndex("top", "9e05423f7ac6acf6d0dce3425c4ea9fe"),
                 new BaseSubscriber<Index>() {
                     @Override
                     public void onNext(Index index) {
