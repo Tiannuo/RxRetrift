@@ -1,10 +1,17 @@
 package com.tikou.library_service.retrofit;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+import org.json.JSONObject;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -19,6 +26,14 @@ import rx.schedulers.Schedulers;
  * 作者：TianNuo
  * 邮箱：1320917731@qq.com
  * 说明：retrofit2构建
+ * 调用测试案例
+ * ServiceHelper.toSubscribe(ServiceHelper.creatHeadService(RetrofitService.postRegisterEmailService.class).postRegisterEmail("email"
+ ,ServiceHelper.creatRequestBody2("pid","00000000000","email","13851373551@qq.com","password","123456")), new BaseSubscriber<RegisterBean>() {
+@Override
+public void onNext(RegisterBean registerBean) {
+Log.i("RxRe",registerBean.toString());
+}
+});
  * 参考：
  */
 
@@ -38,7 +53,9 @@ public class ServiceHelper {
                 Request.Builder rBuilder=request.newBuilder()
                         .method(request.method(),request.body())
                         //添加请求头
-                        .header("Authorization",ApiUrl.Token)
+                        //.header("Authorization",ApiUrl.Token)
+                        .header("Content-Type","application/json")
+                        .header("Accept","application/json")
                         ;
                 return chain.proceed(rBuilder.build());
             }
@@ -68,6 +85,34 @@ public class ServiceHelper {
                 .build();
         return retrofit.create(clazz);
     }
+
+    /**
+     * 上传json数据RequestBody
+     * jsonObject
+     * @param jsonObject
+     * @return
+     */
+    public static RequestBody creatRequestBody(JsonObject jsonObject){
+        return RequestBody.create(MediaType.parse("application/json;charset=utf-8"),new Gson().toJson(jsonObject));
+    }
+
+    /**
+     * 上传json数据RequestBody第二种方式
+     * 参数注意奇数位是key，偶数位是value,一一对应
+     * @param keyValue
+     * @return
+     */
+    public static RequestBody creatRequestBody2(String... keyValue){
+        JsonObject jsonObject=new JsonObject();
+        for (int i=0;i<keyValue.length;i++){
+            if (i%2==0){
+            jsonObject.addProperty(keyValue[i],keyValue[i+1]);
+            }
+        }
+        return RequestBody.create(MediaType.parse("application/json;charset=utf-8"),new Gson().toJson(jsonObject));
+    }
+
+
 
     /**
      * 开启一个请求
