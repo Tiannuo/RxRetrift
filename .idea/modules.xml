@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/New_StudyDemo.iml" filepath="$PROJECT_DIR$/New_StudyDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/library_service/library_service.iml" filepath="$PROJECT_DIR$/library_service/library_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/library_umeng/library_umeng.iml" filepath="$PROJECT_DIR$/library_umeng/library_umeng.iml" />
+      <module fileurl="file://$PROJECT_DIR$/new-study.iml" filepath="$PROJECT_DIR$/new-study.iml" />
     </modules>
   </component>
 </project>
