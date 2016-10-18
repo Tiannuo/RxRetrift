@@ -2,6 +2,9 @@ package com.tikou.library_service.rx;
 
 import android.util.Log;
 
+import com.tikou.library_service.moddle.ErrorMsgBean;
+import com.tikou.library_service.utils.ErrorHandler;
+
 import rx.Subscriber;
 
 /**
@@ -18,8 +21,10 @@ public abstract class BaseSubscriber<T> extends Subscriber<T>{
     }
 
     @Override
-    public void onError(Throwable e) {
-        Log.i("RxRe","onError");
+        public void onError(Throwable e) {
+        Log.i("RxRe","onError"+e.getMessage());
+        ErrorMsgBean errorMsgBean= ErrorHandler.handle(e);
+        Log.i("RxRe","onError"+errorMsgBean.toString());
     }
 
 
