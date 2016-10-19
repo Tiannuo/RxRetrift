@@ -32,14 +32,15 @@ public class RxRe extends BaseActivity{
         rxreee();
     }
     private void rxreee() {
-        mSubscription=ServiceHelper.toSubscribe(ServiceHelper.createNoHeadService(RetrofitService.getIndexService.class).getIndex("top", "9e05423f7ac6acf6d0dce3425c4ea9fe"),
-                new BaseSubscriber<Index>() {
-                    @Override
-                    public void onNext(Index index) {
-                        Log.e("index",index.getResult().getStat());
-                    }
-                }
-        );
+       startToSubscribe(ServiceHelper.toSubscribe(ServiceHelper.createNoHeadService(RetrofitService.getIndexService.class).getIndex("top", "9e05423f7ac6acf6d0dce3425c4ea9fe"),
+               new BaseSubscriber<Index>() {
+                   @Override
+                   public void onNext(Index index) {
+                       Log.e("index",index.getResult().getStat());
+                   }
+               }
+       ));
+
 
     }
     private void rxre() {

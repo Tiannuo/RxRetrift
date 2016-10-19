@@ -126,6 +126,6 @@ public class ServiceHelper {
                         .unsubscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(s);
-
     }
+
 }

@@ -14,7 +14,7 @@ import rx.Subscriber;
  * 数据返回的基类
  */
 
-public abstract class BaseSubscriber<T> extends Subscriber<T>{
+public  abstract class BaseSubscriber<T> extends Subscriber<T>{
     @Override
     public void onCompleted() {
         Log.i("RxRe","onCompleted");

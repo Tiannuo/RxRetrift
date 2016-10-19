@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import com.tikou.library_service.rx.BaseMemoryActivity;
+
 import rx.Subscription;
 
 /**
@@ -13,15 +16,20 @@ import rx.Subscription;
  *
  */
 
-public class BaseActivity extends AppCompatActivity{
+public class BaseActivity extends BaseMemoryActivity{
     protected Subscription mSubscription;
     @Override
     protected void onDestroy() {
         super.onDestroy();
-       if (mSubscription!=null&&!mSubscription.isUnsubscribed()){
-           mSubscription.unsubscribe();
-           Log.i("rx","1subscription.unsubscribe");
-        }
-
+        unsubscribe();
     }
+
+    protected void unsubscribe() {
+
+        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
+            mSubscription.unsubscribe();
+        }
+    }
+
+
 }

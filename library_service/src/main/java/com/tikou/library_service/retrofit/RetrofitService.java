@@ -1,16 +1,12 @@
 package com.tikou.library_service.retrofit;
-
-import com.tikou.library_service.moddle.AcceptBean;
 import com.tikou.library_service.moddle.Index;
 import com.tikou.library_service.moddle.JWTBean;
 import com.tikou.library_service.moddle.RegisterBean;
 import com.tikou.library_service.moddle.TestBean;
-
 import okhttp3.RequestBody;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
 
