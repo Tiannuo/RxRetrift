@@ -1,17 +1,14 @@
 package com.tikou.library_service.utils;
-
 import com.google.gson.Gson;
 import com.tikou.library_service.moddle.ErrorMsgBean;
-
 import java.io.IOException;
-
 import retrofit2.adapter.rxjava.HttpException;
 
 /**
  * Created by Tikou on 2016/10/18.
  * 作者：TianNuo
  * 邮箱：1320917731@qq.com
- * 说明：异常处理
+ * 说明：异常处理，retrofit error 处理
  * 参考：
  */
 

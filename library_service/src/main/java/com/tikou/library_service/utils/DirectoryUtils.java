@@ -8,12 +8,9 @@ package com.tikou.library_service.utils;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Environment;
-
 import java.io.File;
 import java.io.IOException;
-
 import id.zelory.compressor.Compressor;
-
 public class DirectoryUtils {
     public final static String temp_url=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getAbsolutePath()+"ATemp";
     /**
