@@ -10,7 +10,7 @@
         android:theme="@style/AppTheme"
         android:name=".ShareApp"
         >
-        <activity android:name=".RxRe">
+        <activity android:name=".RxMemoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

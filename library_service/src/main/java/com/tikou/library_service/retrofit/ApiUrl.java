@@ -13,8 +13,8 @@ package com.tikou.library_service.retrofit;
 public class ApiUrl{
     public static String Token="12354546545445";
     //public static String BaseUrl="http://www.9niuw.com.cn:8080/jiuniu/client/";
-    public static String BaseUrl="http://v.juhe.cn/toutiao/";
+    // public static String BaseUrl="http://v.juhe.cn/toutiao/";
     //丛云测试的url
-    //public static String BaseUrl="https://uaa-openapi.hekr.me/";
+   public static String BaseUrl="https://uaa-openapi.hekr.me/";
     public static final String UAA_REGISTER_URL = "register?type=";
 }
